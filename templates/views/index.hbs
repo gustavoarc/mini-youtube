@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Home</title>
+        <link rel="icon" href="/img/IcoYoutube.png">
+        <link rel="stylesheet" href="./css/styles.css">
+       
+    </head>
+
+    <body>
+          <div class="main-content">
+               {{>header }}
+               <p>All videos</p>       
+
+               <form >
+                    <input type="text" placeholder="title video" >
+                    <button>Search</button>  
+               </form>
+
+               <p id="message-1"></p>
+               <p id="message-2"></p>
+          </div>
+         
+          <!--div>
+              {{#each videos }}
+                  <img src="{{ videoUrl }}" alt="" height="200" width="200" >  
+              {{/each}}
+          </div-->  
+           <div class = "col-md-8">
+                   <table class= "table">
+                       <thead>
+                           <tr>
+                               <th>Title</th>
+                               <th>Description</th>
+                               <th>Operations</th>
+                           </tr>
+                       </thead>
+                       <tbody>
+                           {{#each videos}}
+                           <tr>
+                               <td>{{ title }}</td>
+                               <td> {{description}}</td>
+                               <td> 
+                                   <a href="{{ videoUrl }}" target="_black" class ="btnbtn_primary">View</a>
+                                </td>
+                           </tr>
+                           {{/each}}
+                       </tbody>
+
+                   </table>
+               </div>
+
+
+         {{>footer}}
+        
+
+          <script src="/js/app.js"></script>
+    </body> 
+</html>

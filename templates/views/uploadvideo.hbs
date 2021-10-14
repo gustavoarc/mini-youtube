@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Upload video</title>
+        <link rel="icon" href="/img/IcoYoutube.png">
+        <link rel="stylesheet" href="./css/styles.css"> 
+      
+    </head>
+
+    <body>
+          <div class="main-content">
+               {{>header }}
+               <p> </p>       
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <form action="/uploadvideo" method = "POST" enctype="multipart/form-data">
+                                    <div class = "form-group">
+                                        <input type="text" name ="title" class ="form-control" placeholder="Title video"  size="50">
+                                    </div>
+                                    
+                                       <div class = "form-group mb-3">
+                                        <input type="text"   name ="tags" class ="form-control" placeholder="tags" size="50" >
+                                    </div>
+
+                                    <div class = "form-group mb-3">
+                                        <textarea   name ="description" class ="form-control" placeholder="Description video" cols="49" rows="4" ></textarea>
+                                    </div>
+                                    
+
+
+                                    <div class = "input-group mb-3">
+                                        <div class="custom-file" >
+                                            <input  type = "file" name ="video" class ="custom-file-input" id="inputGroupFile01"></input>    
+                                        </div>                                        
+                                    </div>
+
+                                    <button class="btn btn-primary">
+                                            Upload video
+                                    </button>
+                                
+                                
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p> </p>
+                <p> </p>
+               <div class = "col-md-8">
+                   <table class= "table">
+                       <thead>
+                           <tr>
+                               <th>Title</th>
+                               <th>Description</th>
+                               <th>Date</th>
+                           </tr>
+                       </thead>
+                       <tbody>
+                           {{#each videos}}
+                           <tr>
+                               <td>{{ title }}</td>
+                               <td> {{description}}</td>
+                               <td>{{ loadingDate }}  </td>
+                           </tr>
+                           {{/each}}
+                       </tbody>
+
+                   </table>
+               </div>
+
+               
+          </div>
+         
+         {{>footer}}
+        
+
+         
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+  
+    </body> 
+  
+    
+</html>

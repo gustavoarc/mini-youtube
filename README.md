@@ -13,7 +13,6 @@ https://developers.google.com/identity/gsi/web/guides/overview
 
 # variables que se deben de crear en config
 PORT= 
-MONGODB_CNNlocal=mongodb://127.0.0.1:27017/mini-you-tube
 MONGODB_CNN= 
 SECRETORPRIVATEKEY=M1niP0y3ct0Youtube
 GOOGLE_CLIENT_ID= 
